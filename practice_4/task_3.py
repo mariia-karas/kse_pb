@@ -12,10 +12,10 @@ for i in grades:
   mid_grade = sum(i) / len(i)
   mid_grade_list.append(mid_grade)
 print(mid_grade_list)
-mv = max(mid_grade_list)
+mean_value = max(mid_grade_list)
 
 for index,value in enumerate(mid_grade_list):
-  if value == mv:
+  if value == mean_value:
     break
 
 print(index)
