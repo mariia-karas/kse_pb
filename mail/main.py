@@ -1,40 +1,8 @@
-import hashlib
 from data import users
 from data import emails
-
-def registration(users):
-            login = input("Enter the login: ")
-            password = input("Enter your password: ")
-            password_hash = hashlib.sha256("{}".format(password).encode()).hexdigest()
-            if login in users:
-                print("User name is alredy taken")
-            else: 
-                users.update({login: password_hash})
-
-def login(users):
-    name = input("Enter name: ")
-    password = input("Password: ")
-    password_hash = hashlib.sha256("{}".format(password).encode()).hexdigest()
-    if name not in users:
-        print("User not registrated:")
-    else: 
-         if password_hash == users[name]:
-              print("You are logged in")
-              return True, name
-    return False, None
-        
-
-def send_email(users, emails, sender):
-    recipient = input("enter recipient: ")
-    mail = input("Enter some text: ")
-    if recipient not in users:
-          print("Recipient is not registered")
-    else:
-         emails.append({"sender": sender, "recipient" : recipient, "email" : mail})
-    print(emails)
-
-     
-
+from registration import registration
+from login import login
+from send_email import send_email
 
 def logout():
     return False
