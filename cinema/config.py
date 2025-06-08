@@ -1,0 +1,1 @@
+FILE_PATH = "C:/Users/user/pb/kse_pb/cinema/data/cinema_halls.json"
