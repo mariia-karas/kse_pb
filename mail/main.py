@@ -52,7 +52,7 @@ while True:
         if user_status is True:
             user_status = logout()
         else:
-             print("You are not logged in to logged out")
+             print("You are not logged in to log out")
         print("logout")
 
 
