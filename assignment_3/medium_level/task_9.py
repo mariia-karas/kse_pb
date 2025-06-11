@@ -3,9 +3,7 @@ list_2 = [5, 6, 7, 8]
 
 final = []
 
-print(list(zip(list_1, list_2)))
-
-for x, y in zip(list_1, list_2):
-    final.append(x)
-    final.append(y)
+for i in range(len(list_1)):
+    final.append(list_1[i])
+    final.append(list_2[i])
 print(final)
