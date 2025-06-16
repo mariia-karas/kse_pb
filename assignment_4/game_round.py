@@ -5,7 +5,10 @@ from result import result
 def game_round():
 
     words = ['apple','bread','candy','dream','eagle','flame','grape','house','input','joker']
-    secret_word = random.choice(words)
+    try:
+        secret_word = random.choice(words)
+    except IndexError:
+        print("The list is empty")
 
     tries = 6
     len_secret_word = len(secret_word)
@@ -17,13 +20,11 @@ def game_round():
         try: 
             guess = input(f"Attempt {7 - tries}/6 – Enter guess: ").strip().lower()
 
-
             status = check_input(guess, secret_word, len_secret_word)
             if status == "wrong_length":
                 continue
             elif status == "win":
                 break
- 
             
             result_list = result(len_secret_word, guess, secret_word)
 
